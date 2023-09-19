@@ -1,0 +1,47 @@
+<html>
+    <title>Captcha</title>
+    <head>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <h1>Captcha Validation</h1>
+        <div class="container">
+            <form action="">
+                <input  type="text" id="captchatext" >
+                <input type="text" id="captchaenter">
+
+                <input type="button" value="refresh" id="refreshbtn" class="btn">
+                <input type="button" value="check" id="checkbtn" class="btn">
+            </form>
+        </div>
+        <script>
+            let captchatext=document.getElementById("captchatext")
+            let captchaenter=document.getElementById("captchaenter")
+            let refreshbtn=document.getElementById("refreshbtn")
+            let checkbtn=document.getElementById("checkbtn")
+            let chars="1234567890ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwxyz";
+
+            function generatecaptch(){
+                let captcha=""
+                for(i=0;i<7;i++){
+                    let index=Math.floor(Math.random()*chars.length);
+                    captcha=captcha+chars[index]
+
+                }
+                captchatext.value=captcha
+            }
+            function validatecaptcha(){
+                if(captcha==captchaenter.innerText){
+                    alert("valid caltch success")
+                }
+                else{
+                    alert("Invalid captcha");
+                    captchaenter.value=""
+                }
+            }
+            generatecaptch()
+            refreshbtn.onclick=generatecaptch;
+            checkbtn.onclick=validatecaptcha;
+        </script>
+    </body>
+</html>

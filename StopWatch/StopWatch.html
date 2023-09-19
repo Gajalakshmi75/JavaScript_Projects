@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>StopWatch clock</title>
+    </head>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            height:100vh;
+            align-items: center;
+        }
+        .container{
+            background: linear-gradient(to right,skyblue,violet,rgb(97, 97, 184));
+            width:40%;
+            padding:60px 0;
+            border-radius: 10px;
+        }
+        #timeshow{
+            background: grey;
+            width:90%;
+            padding:30px;
+            font-size: 20px;
+            text-align: center;
+            left:50%;
+            position: relative;
+            transform: translateX(-50%);
+            font-size: 35px;
+            color:white;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 5px;
+            box-shadow: 0 0 20px grey;
+        }
+        .button{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 60px;
+        }
+        .button button{
+            padding:10px 25px;
+            border: none;
+            background: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div id="timeshow">
+                00 : 00 : 00 : 000
+            </div>
+            <div class="button">
+                <button id="start">Start</button>
+                <button id="pause">Pause</button>
+                <button id="reset">Reset</button>
+            </div>
+
+        </div>
+        <script src="StopWatch\stop.js">
+        </script>
+    </body>
+</html>
